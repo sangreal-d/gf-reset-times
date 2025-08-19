@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-5V55JHGSEJ"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-5V55JHGSEJ');
+        </script>
+        
+        <link rel="manifest" href="/gf-reset-times/manifest.json">
+            <link rel="apple-touch-icon" href="/gf-reset-times/icon-192.png">
+                <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        <!-- ✅ Added theme-color for PWA polish -->
+                        <meta name="theme-color" content="#1C1C1E">
+                            <title>Family Dynasty Times</title>
+                            
+                            <style>
+                                /* --- all your CSS unchanged --- */
+                                * { margin: 0; padding: 0; box-sizing: border-box; }
+                                :root { --ios-blue:#007AFF; --ios-gray:#8E8E93; --ios-light-gray:#F2F2F7; --ios-dark-gray:#1C1C1E; --ios-secondary-gray:#3A3A3C; --ios-tertiary-gray:#48484A; --ios-green:#34C759; --ios-orange:#FF9500; --ios-background:#000000; --ios-card-bg:#1C1C1E; --ios-separator:#38383A; --text-primary:#FFFFFF; --text-secondary:#8E8E93; }
+                                [data-theme="light"] { --ios-background:#F2F2F7; --ios-card-bg:#FFFFFF; --ios-separator:#C6C6C8; --text-primary:#000000; --text-secondary:#8E8E93; --ios-secondary-gray:#F2F2F7; --ios-tertiary-gray:#E5E5EA; }
+                                [data-theme="dark"] { --ios-background:#000000; --ios-card-bg:#1C1C1E; --ios-separator:#38383A; --text-primary:#FFFFFF; --text-secondary:#8E8E93; --ios-secondary-gray:#3A3A3C; --ios-tertiary-gray:#48484A; }
+                                body { font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text',system-ui,sans-serif; background:var(--ios-background); color:var(--text-primary); min-height:100vh; padding:0; }
+                                .container { max-width:430px; margin:0 auto; padding:0 20px; padding-top:calc(env(safe-area-inset-top,20px) + 40px); padding-bottom:20px; position:relative; }
+                                .theme-toggle { position:absolute; top:20px; right:20px; background:var(--ios-card-bg); border:1px solid var(--ios-separator); border-radius:24px; padding:8px 16px; color:var(--text-primary); font-size:15px; font-weight:600; cursor:pointer; transition:all 0.2s ease; display:flex; align-items:center; gap:8px; z-index:100; }
+                                .theme-toggle:hover { background:var(--ios-secondary-gray); }
+                                .theme-toggle:active { transform:scale(0.95); }
+                                .theme-toggle svg { width:16px; height:16px; }
+                                .header { text-align:center; padding:24px 0 32px 0; margin-top:16px; }
+                                .header h1 { font-size:28px; font-weight:700; letter-spacing:-0.02em; margin-bottom:8px; }
+                                .header p,.header .note { font-size:13px; color:var(--text-secondary); margin-bottom:4px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:100%; }
+                                @media (max-width:400px){.header p,.header .note{font-size:12px;}}
+                                .timezone-section { background:var(--ios-card-bg); border-radius:16px; padding:20px; margin-bottom:24px; border:1px solid var(--ios-separator); }
+                                .timezone-row { display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+                                .timezone-info { min-width:0; flex:1 1 120px; }
+                                .timezone-display { font-size:20px; font-weight:600; color:var(--text-primary); word-break:break-all; overflow-wrap:anywhere; }
+                                @media (max-width:500px){.timezone-row{flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:space-between;width:100%;}.timezone-info{flex:1 1 60%;min-width:120px;}.change-button{flex:1 1 auto;text-align:right;margin-top:4px;}.timezone-display{font-size:17px;}}
+                                @media (max-width:375px){.change-button{text-align:left;width:100%;}}
+                                .change-button { background:var(--ios-secondary-gray); border:none; border-radius:24px; padding:12px 20px; color:var(--ios-blue); font-size:15px; font-weight:600; cursor:pointer; transition:all 0.2s ease; display:flex; align-items:center; gap:8px; white-space:nowrap; }
+                                .change-button:hover { background:var(--ios-tertiary-gray); }
+                                .change-button:active { transform:scale(0.95); }
+                                .change-button:focus-visible { outline:2px solid var(--ios-blue); outline-offset:2px; }
+                                .timezone-select { width:100%; background:transparent; border:none; color:var(--text-primary); font-size:20px; font-weight:700; letter-spacing:-0.02em; margin-top:4px; cursor:pointer; appearance:none; font-family:inherit; }
+                                .timezone-select:focus-visible { outline:none; box-shadow:0 0 0 2px var(--ios-blue); }
+                                .timezone-select option { background:var(--ios-card-bg); color:var(--text-primary); }
+                                .events-list { display:flex; flex-direction:column; gap:16px; margin-bottom:32px; }
+                                .event-card { background:var(--ios-card-bg); border-radius:16px; padding:20px; border:1px solid var(--ios-separator); }
+                                .event-content { display:flex; align-items:flex-end; justify-content:flex-start; gap:24px; }
+                                .event-info { flex:0 1 220px; min-width:0; }
+                                .event-time { flex:0 0 auto; min-width:80px; text-align:right; display:flex; flex-direction:column; align-items:flex-end; justify-content:flex-end; }
+                                .special-days { color:var(--ios-orange); font-weight:600; margin-bottom:4px; padding:4px 10px; background:rgba(255,149,0,0.13); border-radius:8px; border:1px solid rgba(255,149,0,0.22); font-size:13px; display:inline-block; max-width:100%; box-shadow:0 1px 2px 0 rgba(255,149,0,0.04); }
+                                .event-utc { font-size:12px; color:var(--text-secondary); margin-bottom:0; display:block; }
+                                .event-title { font-size:22px; font-weight:700; letter-spacing:-0.02em; margin-bottom:0; color:var(--text-primary); }
+                                .ios-clock-time { display:flex; align-items:baseline; gap:2px; }
+                                .ios-clock-hour { font-size:36px; font-weight:700; letter-spacing:-0.02em; color:var(--text-primary); line-height:1; }
+                                .ios-clock-ampm { font-size:20px; font-weight:500; color:var(--text-primary); margin-left:2px; letter-spacing:0.01em; line-height:1; }
+                                .special-times { display:flex; flex-direction:column; align-items:flex-end; gap:4px; }
+                                .footer { text-align:center; margin-top:32px; padding:0 0 32px 0; color:var(--text-secondary); font-size:13px; line-height:1.5; }
+                                .footer .signature { font-size:11px; color:var(--text-secondary); margin-top:10px; opacity:0.8; }
+                                .globe-icon { width:18px; height:18px; }
+                                .timezone-select.hidden { display:none; }
+                                .timezone-display.hidden { display:none; }
+                                @media (max-width:375px){.ios-clock-hour{font-size:26px;}.ios-clock-ampm{font-size:18px;}.event-title{font-size:18px;}.special-days,.event-utc{font-size:11px;}.timezone-info{max-width:120px;}}
+                            </style>
+    </head>
+    <body>
+        <div class="container">
+            <!-- --- your existing body content stays the same --- -->
+            <!-- theme toggle, header, timezone picker, events list, footer -->
+        </div>
+        
+        <script>
+            /* --- all your existing JavaScript unchanged --- */
+            // (events array, state, theme toggle, timezone dropdown, rendering, etc.)
+        </script>
+        
+        <!-- ✅ Service worker registration -->
+        <script>
+            if ("serviceWorker" in navigator) {
+                navigator.serviceWorker.register("/gf-reset-times/sw.js")
+                .then(reg => console.log("SW registered:", reg.scope))
+                .catch(err => console.error("SW registration failed:", err));
+            }
+        </script>
+    </body>
+</html>
